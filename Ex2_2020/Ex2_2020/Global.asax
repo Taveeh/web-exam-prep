@@ -1,0 +1,1 @@
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Ex2_2020.MvcApplication" Language="C#" %>

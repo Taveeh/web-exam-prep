@@ -1,0 +1,21 @@
+<div style="display: flex; flex-direction: column; width: 30%">
+  Username: <input type="text" id="username" name="username" #username>
+  <input type="submit" value="Login" (click)="login(username.value)">
+</div>
+
+<div *ngIf="isLogged">
+  <input type="number" #destinationId>
+  <button (click)="addBanned(destinationId.valueAsNumber)">Add</button>
+  <br><br>
+
+  <input type="text" (change)="search(destinationName.value)" #destinationName>
+  <ul *ngFor="let vacation of elements">
+    <li>{{vacation.id}}, {{vacation.destination}}, {{vacation.country}}, {{vacation.price}}</li>
+  </ul>
+
+  <button (click)="showMostPopular()">SHOW</button>
+
+  <ul *ngFor="let elem of mostPopular" >
+    <li>{{elem.destination}}</li>
+  </ul>
+</div>
